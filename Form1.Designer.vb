@@ -40,11 +40,12 @@ Partial Class Form1
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'ComboBox1
@@ -152,16 +153,13 @@ Partial Class Form1
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.Button9)
-        Me.GroupBox4.Controls.Add(Me.Button8)
-        Me.GroupBox4.Controls.Add(Me.Button7)
         Me.GroupBox4.Controls.Add(Me.Button6)
         Me.GroupBox4.Controls.Add(Me.Button5)
         Me.GroupBox4.Controls.Add(Me.Button4)
         Me.GroupBox4.Controls.Add(Me.Button1)
         Me.GroupBox4.Location = New System.Drawing.Point(222, 12)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(111, 249)
+        Me.GroupBox4.Size = New System.Drawing.Size(111, 154)
         Me.GroupBox4.TabIndex = 6
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Presets:"
@@ -195,36 +193,39 @@ Partial Class Form1
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(10, 151)
+        Me.Button7.Location = New System.Drawing.Point(10, 22)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(92, 23)
         Me.Button7.TabIndex = 5
-        Me.Button7.Text = "Button7"
+        Me.Button7.Text = "8.8.8.8"
         Me.Button7.UseVisualStyleBackColor = True
         '
         'Button8
         '
-        Me.Button8.Location = New System.Drawing.Point(10, 183)
+        Me.Button8.Location = New System.Drawing.Point(10, 54)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(92, 23)
         Me.Button8.TabIndex = 6
-        Me.Button8.Text = "Button8"
+        Me.Button8.Text = "8.8.4.4"
         Me.Button8.UseVisualStyleBackColor = True
         '
-        'Button9
+        'GroupBox5
         '
-        Me.Button9.Location = New System.Drawing.Point(10, 214)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(92, 23)
-        Me.Button9.TabIndex = 7
-        Me.Button9.Text = "Button9"
-        Me.Button9.UseVisualStyleBackColor = True
+        Me.GroupBox5.Controls.Add(Me.Button7)
+        Me.GroupBox5.Controls.Add(Me.Button8)
+        Me.GroupBox5.Location = New System.Drawing.Point(222, 172)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(111, 89)
+        Me.GroupBox5.TabIndex = 7
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "DNS:"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(346, 273)
+        Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
@@ -240,6 +241,7 @@ Partial Class Form1
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox5.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -256,10 +258,10 @@ Partial Class Form1
     Friend WithEvents txtIP As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents Button9 As Button
     Friend WithEvents Button8 As Button
     Friend WithEvents Button7 As Button
     Friend WithEvents Button6 As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents Button4 As Button
+    Friend WithEvents GroupBox5 As GroupBox
 End Class

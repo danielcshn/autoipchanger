@@ -2,6 +2,7 @@
 
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Text = "AutoIPChanger v" + Application.ProductVersion
         DisplayDnsConfiguration()
         ComboBox1.SelectedIndex = 0
     End Sub
@@ -13,7 +14,7 @@ Public Class Form1
             Dim properties As IPInterfaceProperties = adapter.GetIPProperties()
             ComboBox1.Items.Add(adapter.Name)
         Next adapter
-    End Sub 'DisplayDnsConfiguration
+    End Sub
 
     Private Sub RunCommandStatic(ipaddress As String, subred As String)
         Dim strArgumentos As String = "interface ip set address " & Chr(34) & ComboBox1.Text & Chr(34) & " static " & ipaddress & " " & subred
@@ -28,7 +29,6 @@ Public Class Form1
             Dim sr As System.IO.StreamReader = p.StandardOutput
             Dim cadenaSalida As String = sr.ReadToEnd()
             sr.Close()
-            'TextBox1.Text = cadenaSalida
         Catch ex As Exception
 
         End Try
@@ -47,7 +47,42 @@ Public Class Form1
             Dim sr As System.IO.StreamReader = p.StandardOutput
             Dim cadenaSalida As String = sr.ReadToEnd()
             sr.Close()
-            'TextBox1.Text = cadenaSalida
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub RunCommandDNS1(dns1 As String)
+        Dim strArgumentos As String = "interface ip add dns name=" & Chr(34) & ComboBox1.Text & Chr(34) & " static " & dns1
+        Dim strExe As String = "netsh"
+        Dim startInfo As System.Diagnostics.ProcessStartInfo = New System.Diagnostics.ProcessStartInfo(strExe, strArgumentos)
+        startInfo.UseShellExecute = False
+        startInfo.ErrorDialog = False
+        startInfo.CreateNoWindow = True
+        startInfo.RedirectStandardOutput = True
+        Try
+            Dim p As Diagnostics.Process = System.Diagnostics.Process.Start(startInfo)
+            Dim sr As System.IO.StreamReader = p.StandardOutput
+            Dim cadenaSalida As String = sr.ReadToEnd()
+            sr.Close()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub RunCommandDNS2(dns2 As String)
+        Dim strArgumentos As String = "interface ip add dns name=" & Chr(34) & ComboBox1.Text & Chr(34) & " static " & dns2 & " index=1"
+        Dim strExe As String = "netsh"
+        Dim startInfo As System.Diagnostics.ProcessStartInfo = New System.Diagnostics.ProcessStartInfo(strExe, strArgumentos)
+        startInfo.UseShellExecute = False
+        startInfo.ErrorDialog = False
+        startInfo.CreateNoWindow = True
+        startInfo.RedirectStandardOutput = True
+        Try
+            Dim p As Diagnostics.Process = System.Diagnostics.Process.Start(startInfo)
+            Dim sr As System.IO.StreamReader = p.StandardOutput
+            Dim cadenaSalida As String = sr.ReadToEnd()
+            sr.Close()
         Catch ex As Exception
 
         End Try
@@ -75,5 +110,13 @@ Public Class Form1
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         RunCommandStatic("192.168.88.200", "255.255.255.0")
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        RunCommandDNS1("8.8.8.8")
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        RunCommandDNS2("8.8.4.4")
     End Sub
 End Class
