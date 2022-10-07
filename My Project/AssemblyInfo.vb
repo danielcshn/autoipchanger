@@ -10,9 +10,9 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("AutoIPChanger")>
 <Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("KRIPT4")>
+<Assembly: AssemblyCompany("danielcshn")>
 <Assembly: AssemblyProduct("AutoIPChanger")>
-<Assembly: AssemblyCopyright("Copyright © KRIPT4 2017")>
+<Assembly: AssemblyCopyright("Copyright © 2017 danielcshn")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' mediante el carácter '*', como se muestra a continuación:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.0.0.2")>
-<Assembly: AssemblyFileVersion("1.0.0.2")>
+<Assembly: AssemblyVersion("1.0.0.3")>
+<Assembly: AssemblyFileVersion("1.0.0.3")>
